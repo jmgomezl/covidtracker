@@ -51,25 +51,7 @@ def niveles(matriz, nivel =1):
         dict_result[list_keys[key]]["nivel_1"]=n1
     if nivel > 1:
         dict_result = niveles_superiores(dict_result,nivel)
-    """
-    list_keys_n1 = list(dict_result.keys())
-    for key in range(len(list_keys_n1)):
-        n2 = []
-        values = dict_result[list_keys_n1[key]]["nivel_1"]
-        for v in range(len(values)):
-            if values[v] in dict_result:
-                n2 += dict_result[values[v]]["nivel_1"]
-        n2 = list(set(n2))
-        dict_result[list_keys_n1[key]]["nivel_2"] = n2
-    for key in range(len(list_keys_n1)):
-        n3 = []
-        values = dict_result[list_keys_n1[key]]["nivel_2"]
-        for v in range(len(values)):
-            if values[v] in dict_result:
-                n3 += dict_result[values[v]]["nivel_1"]
-        n3 = list(set(n3))
-        dict_result[list_keys_n1[key]]["nivel_3"] = n3
-    """
     return dict_result
 
+# Prueba de los resultados a 4 niveles
 print(niveles(matriz,4))
